@@ -1,0 +1,11 @@
+        <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="https://github.com/Tiquiero" style="border-bottom: none;">tiquiero</a></li>
+            </ul>
+            <% if(theme.busuanzi.enable === true ) { %>
+            	<span id="busuanzi_container_site_pv"><%- date(Date.now(), 'YYYY') %>总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			<% } else { %>
+				<span id="busuanzi_container_site_pv"> <%- date(Date.now(), 'YYYY') %> </span> 
+			<% } %>
+        </div>
