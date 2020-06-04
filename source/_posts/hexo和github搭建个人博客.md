@@ -160,7 +160,7 @@ Hexo的官方网站上有很多漂亮的[主题](https://hexo.io/themes/)可供�
 
 方法2：使用CNAME设置，自己添加两条解析记录：
 
-![12](https://pic.superbed.cn/item/5c7e48cb3a213b0417465265)
+![12](https://pic.downk.cc/item/5ed8f252c2a9a83be5790196.png)
 
 记录类型都是CNAME，主机记录分别是www，@，记录值都是yourname.github.io。
 
