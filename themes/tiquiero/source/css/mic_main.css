@@ -2302,8 +2302,12 @@
 						position: relative;
 						display: block;
 						border-radius:5px;
-                        width: 100%;
-                        padding-top: 13%;
+            width: 50%;
+            height: 100%;
+            padding-top: 13%;
+            float: right;
+            right: 100px;
+            padding-top: 0;
 					}
 
 					#me .arrow {
@@ -2433,9 +2437,15 @@
 			}
 
 				#me .pic img {
-					display: block;
-					border-radius:5px;
-					width: 100%;
+					position: relative;
+          display: block;
+          border-radius:5px;
+          width: 50%;
+          height: 100%;
+          padding-top: 13%;
+          float: right;
+          right: 100px;
+          padding-top: 0;
 				}
 
 				#me .arrow {
