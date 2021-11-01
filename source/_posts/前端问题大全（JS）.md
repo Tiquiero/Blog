@@ -1,6 +1,6 @@
 ---
 title: 前端问题大全（JS） # 文章标题  
-date: 2019/12/17  # 文章发表时间
+date: 2020/12/17  # 文章发表时间
 tags:
 - JS
 categories: JS # 分类

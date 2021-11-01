@@ -1,6 +1,6 @@
 ---
 title: assets-inline-plugin~第一个NPM包/Webpack插件 # 文章标题  
-date: 2018/11/01 14:42:05  # 文章发表时间
+date: 2019/11/01 14:42:05  # 文章发表时间
 tags:
 - Webpack
 categories: Webpack # 分类

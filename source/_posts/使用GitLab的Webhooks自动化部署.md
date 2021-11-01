@@ -1,6 +1,6 @@
 ---
 title: 使用GitLab的Webhooks自动化部署 # 文章标题  
-date: 2018/11/28 19:41:05  # 文章发表时间
+date: 2020/11/28 19:41:05  # 文章发表时间
 tags:
 - Webhooks
 categories: Webhooks # 分类
