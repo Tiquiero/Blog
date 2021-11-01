@@ -114,15 +114,15 @@ setTimeout、setInterval都是宏任务，是在最后执行的。setTimeout是�
 
 铺垫完这些概念，我们回过头看上面那道题目。一开始只是两个函数的定义，不执行。接着是第一个console.log，执行直接输出`script start`。然后遇到了setTimeout，不管，先扔在后面。
 
-然后是async1()，执行async1 这个函数，首先会打印出`async1 start`。然后执行到 await async2()，发现 async2 也是个 async 定义的函数，所以直接执行了“console.log('async2')”，输出`async2`。同时async2返回了一个Promise，划重点：此时返回的Promise会被放入到回调队列中等待，await会让出线程（js是单线程），接下来就会跳出 async1函数 继续往下执行。
+然后是async1()，执行async1 这个函数，首先会打印出`async1 start`。然后执行到 await async2()，发现 async2 也是个 async 定义的函数，所以直接执行了“console.log('async2')”，输出`async2`。同时async2返回了一个Promise（这里阮一峰老师的解释我觉得更容易理解：async 函数返回一个 Promise 对象，当函数执行的时候，一旦遇到 await 就会先返回，等到触发的异步操作完成，再接着执行函数体内后面的语句），划重点：此时返回的Promise会被放入到回调队列中等待，await会让出线程（js是单线程），接下来就会跳出 async1函数 继续往下执行。
 
 然后执行到 new Promise，promise是立即执行的，所以先打印出来`promise1`，然后执行到 resolve 的时候，resolve这个任务就被放到回调队列中等待，然后跳出Promise继续往下执行，输出`script end`。
 
-接下来同步的事件都循环执行完了，调用栈现在已经空出来了，那么事件循环就会去回调队列里面取任务继续放到调用栈里面了。这时候取到的第一个任务，就是前面 async1里 执行到 await async2()时async2放进去的Promise，执行Promise时又触发resolve，划重点：这个resolve又会被放入任务队列继续等待，然后再次跳出 async1函数 继续下一个任务。
+接下来同步的事件都循环执行完了，调用栈现在已经空出来了，那么事件循环就会去回调队列里面取任务继续放到调用栈里面了。这时候取到的第一个任务，就是前面 async1里 执行到 await async2()时async2放进去的Promise，输出`async1 end`。
 
 接下来取到的下一个任务，就是前面 new Promise 放进去的 resolve回调，也就是那个.then()里的操作，输出`promise2`。
 
-调用栈再次空出来了，事件循环就取到了下一个任务，终于轮到的那个async2放进去的Promise的resolve回调！！执行它什么也不会打印的，因为 async2 并没有return东西。此时 await 定义的这个 Promise 已经执行完并且返回了结果，所以可以继续往下执行 async1函数 后面的代码了，输出`async1 end`。最后别忘了！还有一个我们扔在后面不管的setTimeout，输出`setTimeout`。
+调用栈再次空出来了，事件循环就取到了下一个任务，终于轮到的那个async2放进去的Promise的resolve回调！！执行它什么也不会打印的，因为 async2 并没有return东西。此时 await 定义的这个 Promise 已经执行完并且返回了结果。最后别忘了！还有一个我们扔在后面不管的setTimeout，输出`setTimeout`。
 
 所以正确答案就是：
 
@@ -131,6 +131,6 @@ setTimeout、setInterval都是宏任务，是在最后执行的。setTimeout是�
     async2
     promise1
     script end
-    promise2
     async1 end
+    promise2
     setTimeout
