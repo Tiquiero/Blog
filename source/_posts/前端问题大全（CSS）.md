@@ -4,7 +4,7 @@ date: 2020/12/16  # 文章发表时间
 tags:
 - CSS
 categories: CSS # 分类
-thumbnail: https://pic.superbed.cn/item/5c7e45bb3a213b041746125e
+thumbnail: https://pic.imgdb.cn/item/617fc94d2ab3f51d919a724f.jpg
 ---
 
 本文记录了一直以来CSS走过的各种坑，以及各种前端CSS面试问题(因为是不定时补充，想起什么就写什么了，所以顺序没有特定排列，可能有点乱，可以关键词快速搜索)，持续更新中~~~
