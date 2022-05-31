@@ -1,4 +1,4 @@
----
+<!-- ---
 title: My Resume 
 thumbnail: http://pci87f9rx.bkt.clouddn.com/about.jpg # 略缩图
 ---
@@ -48,4 +48,4 @@ thumbnail: http://pci87f9rx.bkt.clouddn.com/about.jpg # 略缩图
             负责内容：在自己空余时间独立完成的，主要是想了解NPM包是怎样的，学习如何去写一个webpack插件，了解了webpack里的一些对象和方法。完整的思路过程和代码在博客和Github里都有记录。
         }
     }
-}
+} -->
